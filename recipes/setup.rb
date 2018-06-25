@@ -2,6 +2,8 @@ package 'tree' do
   action :install
 end
 
+package 'emacs'
+
 service 'ntpd' do
   action  [ :enable, :start ]
 end
