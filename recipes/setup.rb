@@ -17,14 +17,7 @@ end
 #node['ipaddress']
 #node['memory']['total']
 
-file '/etc/motd' do
-  content "This server is property of swathi
-  Hostname: #{node['hostname']}
-  Ipaddress: #{node['ipaddress']}
-  Cpu: #{node['cpu']['0']['mhz']}
-  Memory: #{node['memory']['total']}
- "
-  owner 'root'
-  group 'root'
+template '/etc/motd' do
+  source 'motd.erb'
   action :create
 end
